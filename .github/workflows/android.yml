@@ -18,6 +18,9 @@ jobs:
           distribution: 'temurin'  # Can use 'adopt' as well
           java-version: '17'    # Set Java version to 17
 
+      - name: Make gradlew executable
+        run: chmod +x ./gradlew
+
       - name: Build Release APK
         run: ./gradlew assembleRelease
 
