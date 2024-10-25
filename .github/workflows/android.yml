@@ -24,8 +24,8 @@ jobs:
       - name: Build Release APK
         run: ./gradlew assembleRelease
 
-      - name: Releasing using Hub
-        uses: sangatdesai/release-apk@main
-        env:
-         GITHUB_TOKEN: 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
-         APP_FOLDER: app
+      - name: Upload a Build Artifact
+        uses: actions/upload-artifact@v4.4.3
+        with:
+          name: Sounds_${{ github.ref_name }}.apk
+          path: app/build/outputs/apk/release/*.apk
